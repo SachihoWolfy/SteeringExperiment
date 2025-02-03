@@ -34,5 +34,8 @@ public class Seeker : Kinematic
         steeringUpdate.linear = myMoveType.getSteering().linear;
         steeringUpdate.angular = flee ? myFleeRotateType.getSteering().angular : mySeekRotateType.getSteering().angular;
         base.Update();
+        myMoveType.target = myTarget;
+        mySeekRotateType.target = myTarget;
+        myFleeRotateType.target = myTarget;
     }
 }
